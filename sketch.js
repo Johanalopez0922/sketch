@@ -6,23 +6,22 @@ const Body = Matter.Body;
 function setup() {
     createCanvas(400,400);
     engine = Engine.create();
-    world = Engine.world;
+    // Cambiar Engine por engine, por que estamos haciendo referencia a la variable que declaramos en la linea anterior. 
+    world = engine.world;
     
-
     var ball_options={
         restitution:0.95,
         frictionAir:0.01
-
     }
 
     var rectangle_options={
         isStatic:true
     }
 
-
-    ball=Bodies.circle(100,10,20,ball_options);
+    ball = Bodies.circle(100,10,20,ball_options);
     World.add(world,ball);
-    rectangle1=Bodies.rectangle(200,350,150,50,rectangle_options);
+    
+    rectangle1 = Bodies.rectangle(200,350,150,50,rectangle_options);
     World.add(world,rectangle1);
 }
 
